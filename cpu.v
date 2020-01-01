@@ -31,7 +31,7 @@ wire [1:0] ALUOp;
 
 
 //alu
-wire [2:0] result_alu_control;
+wire [3:0] result_alu_control;
 wire [dataWidth-1:0] result_mux_after_registers;
 wire zero;
 wire [dataWidth-1:0] result_alu;

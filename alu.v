@@ -1,12 +1,8 @@
-<<<<<<< HEAD
+
 module Alu (select, A, B, F,zero);
 parameter dataWidth =64;
-parameter selector =3 ;
-=======
-module alu (select, A, B, F,zero);
-parameter dataWidth = 4;
-parameter selector =4 ;
->>>>>>> b3d27521b7a4fa68050bb12e836083f611088f80
+parameter selector =4;
+
 input [selector-1:0] select;
 input [dataWidth-1:0] A, B;
 output reg [dataWidth-1:0] F;
