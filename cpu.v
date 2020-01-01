@@ -1,3 +1,5 @@
+
+`include "clock.v"
 `include "pc.v"
 `include "add.v"
 `include "instructionMemory.v"
@@ -59,6 +61,8 @@ begin
 	pcReset =1;
 	#delay pcReset=0;
  end
+Clock clock(clk);
+
 Pc pc(
 		clk,
 		pcReset,
@@ -137,6 +141,4 @@ Mux mux_after_dataMemory(
 	result_mux_after_dataMemory,
 	MemtoReg
 );
-
-
 endmodule
