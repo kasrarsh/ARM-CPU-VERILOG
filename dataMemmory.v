@@ -1,9 +1,9 @@
-module dataMemory
+module DataMemory
 (address,write_data,read_data,mem_write,mem_read,clock);
-parameter dataWidth = 4;
-parameter addWidth = 5;
+parameter dataWidth = 64;
+parameter addressWidth = 64;
 parameter memWidth = 64;
-input [addWidth-1:0] address;
+input [addressWidth-1:0] address;
 input [dataWidth-1:0] write_data;
 input mem_write , mem_read , clock;
 output [dataWidth-1:0] read_data;
