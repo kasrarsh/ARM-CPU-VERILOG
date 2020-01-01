@@ -141,4 +141,11 @@ Mux mux_after_dataMemory(
 	result_mux_after_dataMemory,
 	MemtoReg
 );
-endmodule
+    initial
+        begin
+            $dumpfile("cpu.vcd");
+            $dumpvars(0, cpu);
+            #200 ;
+            $finish;
+        end
+endmodule : cpu
