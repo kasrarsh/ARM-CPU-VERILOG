@@ -1,5 +1,5 @@
-module alu (select, A, B, F,zero);
-parameter dataWidth = 4;
+module Alu (select, A, B, F,zero);
+parameter dataWidth =64;
 parameter selector =3 ;
 input [selector-1:0] select;
 input [dataWidth-1:0] A, B;

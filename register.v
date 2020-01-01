@@ -1,12 +1,12 @@
-module register
-(reg_write,clock,read_register1,read_register2,write_register,read_data1,read_data2,write_data);
-parameter dataWidth = 4;
-parameter addWidth = 5;
+module Register
+(clock,reg_write,read_register1,read_register2,write_register,read_data1,read_data2,write_data);
+parameter dataWidth = 64;
+parameter addressWidth = 5;
 parameter memWidth = 64;
 
 input clock;
 input reg_write;
-input [addWidth-1:0] read_register1,read_register2,write_register;
+input [addressWidth-1:0] read_register1,read_register2,write_register;
 input [dataWidth-1:0] write_data;
 output [dataWidth-1:0] read_data1,read_data2;
 

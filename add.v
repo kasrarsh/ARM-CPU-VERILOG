@@ -1,5 +1,5 @@
-module add(input_1,input_2,outPut);
-parameter dataWidth = 4;
+module Add(input_1,input_2,outPut);
+parameter dataWidth =64;
 input [dataWidth-1:0] input_1,input_2;
 output [dataWidth-1:0] outPut;
 

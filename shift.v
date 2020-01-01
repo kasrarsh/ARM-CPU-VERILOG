@@ -1,6 +1,6 @@
-module shift(inPut,outPut);
+module Shift(inPut,outPut);
 
-parameter dataWidth = 4 ;
+parameter dataWidth = 64 ;
 input [dataWidth-1:0] inPut;
 output [dataWidth-1:0] outPut;
 
