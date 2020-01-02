@@ -1,5 +1,5 @@
 module Register
-    (clock, reg_write, read_register1, read_register2, write_register, read_data1, read_data2, write_data);
+    (clock, reg_write, read_register1, read_register2, write_register, write_data, read_data1, read_data2);
     parameter delay =10;
     parameter dataWidth=64;
     parameter addressWidth=5;

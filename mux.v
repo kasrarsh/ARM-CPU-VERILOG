@@ -1,4 +1,4 @@
-module Mux(input_0, input_1, outPut, select);
+module Mux(select,input_0, input_1, outPut);
     parameter delay =10;
     parameter dataWidth=64;
 

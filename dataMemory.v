@@ -1,5 +1,5 @@
 module DataMemory
-    (address, write_data, read_data, mem_write, mem_read, clock);
+    ( mem_write, mem_read, clock,address, write_data, read_data);
     parameter delay =10;
     parameter dataWidth=64;
     parameter addressWidth=64;

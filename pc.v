@@ -5,10 +5,8 @@ module Pc(clk, reset, currentPc, nextPc);
     output reg [dataWidth-1:0] nextPc;
     always @(posedge clk)
         begin
-            if (reset)
-                nextPc = 0;
-            else
                 nextPc = currentPc;
 
         end
+
 endmodule
