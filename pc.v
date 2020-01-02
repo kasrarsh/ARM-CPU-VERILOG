@@ -1,11 +1,14 @@
-module Pc(clk, reset, currentPc, nextPc);
+module Pc(clk, reset, result_mux_after_add, currentPc);
     parameter dataWidth=64;
-    input [dataWidth-1:0] currentPc;
+    input [dataWidth-1:0] result_mux_after_add;
     input clk, reset;
-    output reg [dataWidth-1:0] nextPc;
+    output reg [dataWidth-1:0] currentPc;
     always @(posedge clk)
         begin
-                nextPc = currentPc;
+            if (reset)
+                currentPc =0 ;
+            else
+                currentPc = result_mux_after_add;
 
         end
 

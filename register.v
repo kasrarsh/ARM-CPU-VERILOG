@@ -13,6 +13,8 @@ module Register
 
     reg [dataWidth-1:0] registers [memWidth-1:0];
 
+
+
     always @(posedge clock)
         begin
             if (reg_write == 1) begin

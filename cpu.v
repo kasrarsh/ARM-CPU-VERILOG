@@ -10,12 +10,17 @@
 `include "control.v"
 `include "aluControl.v"
 module cpu;
+    initial
+        begin
+            pcReset = 1;
+            #delay pcReset = 0;
+        end
+
     parameter delay=10;
     parameter dataWidth=64;
     parameter instructionWidth=64;
     wire clk;
     reg pcReset;
-
 //output of pc
     wire [63:0] currentPc;
 
@@ -62,11 +67,7 @@ module cpu;
     wire [dataWidth-1:0] result_mux_after_registers;
     wire [dataWidth-1:0] result_mux_after_add;
 
-    initial
-        begin
-            pcReset = 1;
-            #delay pcReset = 0;
-        end
+
     Clock clock(clk);
     Pc pc(
         clk,
@@ -160,4 +161,4 @@ module cpu;
             #200;
             $finish;
         end
-endmodule : cpu
+endmodule
