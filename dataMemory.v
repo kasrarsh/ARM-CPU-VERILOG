@@ -10,6 +10,14 @@ module DataMemory
     output [dataWidth-1:0] read_data;
 
     reg [dataWidth-1:0] memory [memWidth-1:0];
+
+    integer i;
+    initial
+        begin
+            for ( i=0 ;i<memWidth-1;i = i + 1)
+                memory[i] = i;
+        end
+
     always @(posedge clock)
         begin
             if (mem_write) begin

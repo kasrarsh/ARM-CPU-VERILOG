@@ -11,18 +11,23 @@ module Register
     input [dataWidth-1:0] write_data;
     output [dataWidth-1:0] read_data1, read_data2;
 
-    reg [dataWidth-1:0] registers [memWidth-1:0];
+    reg [dataWidth-1:0] memory [memWidth-1:0];
 
-
+    integer i;
+    initial
+        begin
+            for ( i=0 ;i<memWidth-1;i = i + 1)
+                memory[i] = i;
+        end
 
     always @(posedge clock)
         begin
             if (reg_write == 1) begin
-                #delay registers[write_register] <= write_data;
+                #delay memory[write_register] <= write_data;
             end
         end
-    assign #delay read_data1 = registers[read_register1];
-    assign #delay read_data2 = registers[read_register2];
+    assign #delay read_data1 = memory[read_register1];
+    assign #delay read_data2 = memory[read_register2];
 endmodule
 
 		
