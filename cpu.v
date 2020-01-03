@@ -3,6 +3,7 @@
 `include "add.v"
 `include "instructionMemory.v"
 `include "register.v"
+`include "immGen.v"
 `include "alu.v"
 `include "mux.v"
 `include "dataMemory.v"
@@ -13,7 +14,7 @@ module cpu;
     initial
         begin
             pcReset = 1;
-            #delay pcReset = 0;
+            #(delay+500) pcReset = 0;
         end
 
     parameter delay=10;
@@ -40,6 +41,9 @@ module cpu;
     wire [dataWidth-1:0] read_data1;
     wire [dataWidth-1:0] read_data2;
 
+///output of immGen
+    wire [dataWidth-1:0] extendedInstruction;
+
 
 //output of aluControl
     wire [dataWidth-1:0] result_alu;
@@ -55,7 +59,6 @@ module cpu;
 
 //output of dataMemory
     wire [dataWidth-1:0] result_dataMemory;
-
 
 
 //output of adders
@@ -75,6 +78,7 @@ module cpu;
         result_mux_after_add,
         currentPc
     );
+
     Add add_upper_pc(
         currentPc,
         64'b100,
@@ -105,6 +109,10 @@ module cpu;
         read_data2
 
     );
+    ImmGen immGen(
+        instruction,
+        extendedInstruction
+    );
     Mux mux_after_registers(
         ALUSrc,
         read_data2,
@@ -122,7 +130,7 @@ module cpu;
     );
     ALUControl aluControl(
         ALUOp,
-        instruction[31:22],
+        {instruction[31:25], instruction[14:12]},
         result_alu_control
 
     );

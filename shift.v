@@ -4,6 +4,6 @@ module Shift(inPut, outPut);
     input [dataWidth-1:0] inPut;
     output [dataWidth-1:0] outPut;
 
-    assign #delay outPut = inPut << 1;
+    assign outPut = inPut << 1;
 endmodule
 

@@ -21,10 +21,10 @@ module DataMemory
     always @(posedge clock)
         begin
             if (mem_write) begin
-                #delay memory[address] <= write_data;
+                 memory[address] <= write_data;
             end
         end
-    assign #delay read_data = (mem_read) ? memory[address]:4'bz;
+    assign  read_data = (mem_read) ? memory[address]:4'b0;
 endmodule
 
 

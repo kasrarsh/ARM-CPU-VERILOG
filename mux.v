@@ -9,8 +9,8 @@ module Mux(select,input_0, input_1, outPut);
     always @(input_0, input_1, select)
         begin
             case (select)
-                0: #delay outPut = input_0;
-                1: #delay outPut = input_1;
+                0:  outPut = input_0;
+                1:  outPut = input_1;
             endcase
         end
 endmodule

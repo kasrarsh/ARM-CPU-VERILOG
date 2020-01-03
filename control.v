@@ -33,13 +33,13 @@ module Control(instruction, Branch, MemRead, MemtoReg, ALUOp, MemWrite, ALUSrc, 
                     #delay RegWrite = 1;
                 end
                 7'b0100011: begin
-                    #delay Branch = 0;
-                    #delay MemRead = 0;
-                    #delay MemtoReg = 0;
-                    #delay ALUOp = 2'b00;
-                    #delay MemWrite = 1;
-                    #delay ALUSrc = 1;
-                    #delay RegWrite = 0;
+                    Branch = 0;
+                    MemRead = 0;
+                    MemtoReg = 0;
+                    ALUOp = 2'b00;
+                    MemWrite = 1;
+                    ALUSrc = 1;
+                    RegWrite = 0;
                 end
                 7'b1100011: begin
                     #delay Branch = 1;

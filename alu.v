@@ -6,13 +6,20 @@ module Alu(select, A, B, F, zero);
     input [selector-1:0] select;
     input [dataWidth-1:0] A, B;
     output reg [dataWidth-1:0] F;
-    output zero;
+    output reg zero;
 
     always @(select, A, B)
+    begin
         case (select)
-            4'b0000: #delay F = A & B;
-            4'b0001: #delay F = A ^ B;
-            4'b0010: #delay F = A+B;
-            4'b0110: #delay F = A-B;
+            4'b0000:  F = A & B;
+            4'b0001:  F = A ^ B;
+            4'b0010:  F = A+B;
+            4'b0110:  F = A-B;
         endcase
+        if (F == 0)
+            zero=1;
+        else
+            zero=0;
+    end
+
 endmodule

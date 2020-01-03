@@ -23,11 +23,11 @@ module Register
     always @(posedge clock)
         begin
             if (reg_write == 1) begin
-                #delay memory[write_register] <= write_data;
+                 memory[write_register] <= write_data;
             end
         end
-    assign #delay read_data1 = memory[read_register1];
-    assign #delay read_data2 = memory[read_register2];
+    assign  read_data1 = memory[read_register1];
+    assign  read_data2 = memory[read_register2];
 endmodule
 
 		
