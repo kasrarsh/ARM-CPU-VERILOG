@@ -116,11 +116,11 @@ module cpu;
     Mux mux_after_registers(
         ALUSrc,
         read_data2,
-        instruction[63:0],
+        extendedInstruction,
         result_mux_after_registers
     );
     Shift shift(
-        instruction,
+        extendedInstruction,
         result_shift_left
     );
     Add add_after_shift_left(
