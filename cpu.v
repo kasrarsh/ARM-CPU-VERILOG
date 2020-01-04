@@ -11,17 +11,18 @@
 `include "control.v"
 `include "aluControl.v"
 module cpu;
+    parameter delay=10;
+    parameter dataWidth=64;
+    parameter instructionWidth=64;
+    wire clk;
+    reg pcReset;
     initial
         begin
             pcReset = 1;
             #(delay+500) pcReset = 0;
         end
 
-    parameter delay=10;
-    parameter dataWidth=64;
-    parameter instructionWidth=64;
-    wire clk;
-    reg pcReset;
+   
 //output of pc
     wire [63:0] currentPc;
 
