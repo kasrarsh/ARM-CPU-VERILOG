@@ -14,7 +14,7 @@ module InstructionMemory
         for ( i=0 ;i<memWidth-1;i = i + 1)
             memory[i] = i;
         //r-format
-        memory[0] = 8'b00100011;
+        memory[0] = 8'b00110011;
         //ld
         memory[4] =  8'b00000011;
         //sd
