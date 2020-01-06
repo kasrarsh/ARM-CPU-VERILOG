@@ -26,8 +26,8 @@ module Register
                  memory[write_register] <= write_data;
             end
         end
-    assign  read_data1 = memory[read_register1];
-    assign  read_data2 = memory[read_register2];
+    assign  read_data1 = memory[1];
+    assign  read_data2 = memory[1];
 endmodule
 
 		

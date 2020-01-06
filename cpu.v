@@ -19,7 +19,7 @@ module cpu;
     initial
         begin
             pcReset = 1;
-            #(delay+500) pcReset = 0;
+            #delay pcReset = 0;
         end
 
    
@@ -143,7 +143,7 @@ module cpu;
         zero
     );
     Mux mux_after_add(
-        (Branch ^ zero),
+        (Branch & zero),
         result_add_upper_pc,
         result_add_after_shift_left,
         result_mux_after_add

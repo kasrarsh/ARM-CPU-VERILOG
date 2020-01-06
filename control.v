@@ -16,23 +16,23 @@ module Control(instruction, Branch, MemRead, MemtoReg, ALUOp, MemWrite, ALUSrc, 
             case (instruction)
                 //r-format
                 7'b0110011: begin
-                    #delay Branch = 0;
-                    #delay MemRead = 0;
-                    #delay MemtoReg = 0;
-                    #delay ALUOp = 2'b10;
-                    #delay MemWrite = 0;
-                    #delay ALUSrc = 0;
-                    #delay RegWrite = 1;
+                     Branch = 0;
+                     MemRead = 0;
+                     MemtoReg = 0;
+                     ALUOp = 2'b10;
+                     MemWrite = 0;
+                     ALUSrc = 0;
+                     RegWrite = 1;
                 end
                 //ld
                 7'b0000011: begin
-                    #delay Branch = 0;
-                    #delay MemRead = 1;
-                    #delay MemtoReg = 1;
-                    #delay ALUOp = 2'b00;
-                    #delay MemWrite = 0;
-                    #delay ALUSrc = 1;
-                    #delay RegWrite = 1;
+                     Branch = 0;
+                     MemRead = 1;
+                     MemtoReg = 1;
+                     ALUOp = 2'b00;
+                     MemWrite = 0;
+                     ALUSrc = 1;
+                     RegWrite = 1;
                 end
                 //sd
                 7'b0100011: begin
@@ -46,13 +46,13 @@ module Control(instruction, Branch, MemRead, MemtoReg, ALUOp, MemWrite, ALUSrc, 
                 end
                 //beq
                 7'b1100011: begin
-                    #delay Branch = 1;
-                    #delay MemRead = 0;
-                    #delay MemtoReg = 0;
-                    #delay ALUOp = 2'b01;
-                    #delay MemWrite = 0;
-                    #delay ALUSrc = 0;
-                    #delay RegWrite = 0;
+                     Branch = 1;
+                     MemRead = 0;
+                     MemtoReg = 0;
+                     ALUOp = 2'b01;
+                     MemWrite = 0;
+                     ALUSrc = 0;
+                     RegWrite = 0;
                 end
             endcase
         end
