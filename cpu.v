@@ -167,7 +167,7 @@ module cpu;
         begin
             $dumpfile("cpu.vcd");
             $dumpvars(0, cpu);
-            #200;
+            #400;
             $finish;
         end
 endmodule
